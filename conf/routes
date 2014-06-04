@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#Map Pad routes
+GET     /pads.json                       controllers.Pads.index()
+POST    /pads.json                       controllers.Pads.create()
+GET     /pads/:id.json                   controllers.Pads.show(id: Long)
+PUT     /pads/:id.json                   controllers.Pads.update(id: Long)
+DELETE  /pads/:id.json                   controllers.Pads.destroy(id: Long)
+OPTIONS /*route                          controllers.Application.options(route: String)
+POST    /pads/evaluate                   controllers.Pads.evaluate()
