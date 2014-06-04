@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/codepad -Dhttp.port=${PORT} -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=${DATABASE_URL}
+web: target/universal/stage/bin/codepad -DapplyEvolutions.default=true -Dconfig.file=/app/conf/application-prod.conf
