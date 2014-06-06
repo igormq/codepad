@@ -101,6 +101,11 @@ public class Pads extends Controller {
             result.put("message", e.getMessage());
             return badRequest(result);
         }
+        catch (Exception e) {
+            result.put("exception", e.getClass().toString());
+            result.put("message", e.getMessage());
+            return badRequest(result);
+        }
         result.put("output", evalResult.getOutput());
         result.put("returned", evalResult.getReturned());
 
